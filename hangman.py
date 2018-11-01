@@ -58,49 +58,16 @@ errors = 0
 
 while errors < 6:
     guess = input("Enter a letter: ")
+
     if guess.lower() in find_word:
         print("Good Job!")
     else:
         print("Congrats you failed at life!")
         errors = errors +1
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        print ("Error count {}".format(errors))
+        draw_hangman(errors)
+        if errors >= 6:
+            print ("Sorry, you lost the game. Please try again later.")
 
 
 
