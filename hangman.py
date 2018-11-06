@@ -54,21 +54,28 @@ print("Hello, " + stored_name + ". It's time to play a game!")
 
 find_word = "test"
 
+def draw_guesses(letters_guessed, guess_word):
+    for character in guess_word:
+        if (character in letters_guessed):
+            print (charcter)
+        else (print " _ ")
+
 errors = 0
+guessed_letters = []
 
 while errors < 6:
     guess = input("Enter a letter: ")
-
+    guessed_letters.append(guess)
+    print (guessed_letters)
     if guess.lower() in find_word:
         print("Good Job!")
     else:
         print("Congrats you failed at life!")
         errors = errors +1
         print ("Error count {}".format(errors))
-        draw_hangman(errors)
         if errors >= 6:
             print ("Sorry, you lost the game. Please try again later.")
-
+        draw_hangman(errors)
 
 
 
